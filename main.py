@@ -3,7 +3,12 @@ import random
 number = random.randint(1, 20)
 tries = 3
 while True:
-    guess = int(input('Make a guess: '))
+    guess = input('Make a guess: ')
+    if guess.isdigit():
+        guess = int(guess)
+    else:
+        print('Please enter a number.')
+        continue
     tries -= 1
     if number == guess:
         print('WIN! You got the number!')
